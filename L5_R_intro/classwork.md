@@ -124,6 +124,9 @@ nums[c(2,4)]
 x <- c(4, 5, 2, -1)
 y <- c(-2, 4, 9, 0)
 x + y
+
+# repeating values
+rep(c(5, 10), 3)
 ```
 
 ### Creating vectors
@@ -136,6 +139,7 @@ x + y
 1. Use the `length()` function to find the length of each of the vectors you have defined, e.g. `length(var10)`.
 1. Use the `str()` function to check the type of each vector you have defined, e.g. `str(var10)`.
 1. Try using `c()` to combine `var10` and `fruits`. What is the type of the resulting vector?
+1. **(CW) Use the `rep()`` function to create the vector c("a", "b", "c", "a", "b", "c", "a", "b", "c")`** 
 
 ### Accessing vector values
 
@@ -165,5 +169,3 @@ date <- c("Jan17", "Jan18", "Jan19", "Jan20", "Jan23", "Jan24", "Jan25", "Jan26"
 1. (Challenge) Find the average of the `tesla_price` vector's first four entries (corresopnding to Jan17 through Jan20), and do the same for `apple_price`.
 1. (Challenge) We will not be focusing on some of the other basic functionality of R in this class, such as for loops and function definitions. However, you can look up the syntax of for loops (https://www.w3schools.com/r/r_for_loop.asp) and functions (https://www.w3schools.com/r/r_functions.asp) and test them out for yourself.
 1. (Challenge) Use a loop to write a function num.odd(v) that returns how many odd numbers there are in the vector v. Then, write a function num.odd2(v) that does the same thing without using a loop.
-
-
