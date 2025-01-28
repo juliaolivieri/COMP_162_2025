@@ -1,4 +1,4 @@
-# Classwork 6
+# Classwork 5
 
 Note: "classwork" questions are bolded. You are welcome to include more answers in your classwork submission.
 
@@ -40,6 +40,17 @@ Note: "classwork" questions are bolded. You are welcome to include more answers 
 |Integer | int | 3L, -1L, 12L |
 | Logical | logi | TRUE, FALSE, T, F |
 
+## Part 0: Exploring R Studio
+
+1. **(CW) Evaluate a mathematical expression (e.g. 1 * 3 + 2) in the console**
+1. **(CW) Type a range of integers into the console (e.g. -20:57) and press enter. What does this do? What do you think the numbers in brackets mean?**
+1. **(CW) Copy these two expressions to the script pane. Use the “run” key to evaluate them.**
+1. **(CW) Save your script as lecture5.R**
+1. Check the documentation for the absolute value function by adding `?abs` to your script and running it
+1. Copy the 5 lines of code at the bottom of the documentation into your script and run them to create a plot.
+1. Try looking up the documentation for the following functions and trying out the example code: `rnorm()`,  `hist()`,  `max()`, `boxplot()`
+
+
 ## Part 1: R Basics
 
 ### Example code from lecture
@@ -56,7 +67,7 @@ str(x)
 
 ### Exploring R Studio
 1. **(CW) Create a new R script file, and save it as classwork6.R. You will submit this file for the "classwork 6" assignment.**
-1. **(CW) Add a comment to the beginning of your script by using #. What happens when you try to run this line of code? I recommend including comments throughout this classwork to 1. help you remember what you did.**
+1. **(CW) Add a comment to the beginning of your script by using #. What happens when you try to run this line of code? I recommend including comments throughout this classwork to help you remember what you did.**
 1. Evaluate the mathematical expression (400/20) + 22 in the console. Then add it to your script file, and evaluate it there. Is there a difference? Which is preferrable?
 1. Try writing -3:6 in your script and evaluating it. What is the output? What do you think the output will be if you instead input 4:93? Check to see if you were right.
 1. Check the documentation of the min function by running ?min in your script. What does this function do based on the documentation?
