@@ -150,6 +150,14 @@ x + y
 
 # repeating values
 rep(c(5, 10), 3)
+
+# descriptive statistics
+x <- 1:10
+mean(x)
+median(x)
+range(x)
+var(x)
+sd(x)
 ```
 
 ### Creating vectors
