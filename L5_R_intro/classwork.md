@@ -50,6 +50,9 @@ Note: "classwork" questions are bolded. The rest of the questions are available 
 # Creating a range of integers
 1:10
 -3:3
+
+# Checking documentation
+?sqrt()
 ```
 
 1. **(CW) Evaluate a mathematical expression (e.g. 1 * 3 + 2) in the console**
