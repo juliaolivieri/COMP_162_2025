@@ -42,6 +42,16 @@ Note: "classwork" questions are bolded. The rest of the questions are available 
 
 ## Part 0: Introduction to R
 
+### Example code from lecture
+```
+# Evaluating mathematical expression
+(15 + 3)^2/2
+
+# Creating a range of integers
+1:10
+-3:3
+```
+
 1. **(CW) Evaluate a mathematical expression (e.g. 1 * 3 + 2) in the console**
 1. **(CW) Type a range of integers into the console (e.g. -20:57) and press enter. What does this do? What do you think the numbers in brackets mean?**
 1. **(CW) Copy these two expressions to the script pane. Use the “run” key to evaluate them.**
