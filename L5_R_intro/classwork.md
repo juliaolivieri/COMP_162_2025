@@ -1,6 +1,6 @@
 # Classwork 5
 
-Note: "classwork" questions are bolded. You are welcome to include more answers in your classwork submission.
+Note: "classwork" questions are bolded. The rest of the questions are available if you have extra time. You are welcome to include more answers in your classwork submission, but you are not required to.
 
 ### Mathematical Operators in R
 
