@@ -31,6 +31,16 @@ Note: "classwork" questions are bolded. The rest of the questions are available 
 | `floor(x)` | x rounded down |
 | `ceiling(x)` | x rounded up |
 
+### Descriptive statistics functions in R (input is a vector)
+
+| Function | Description |
+| -- | -- |
+| `mean(x)` | mean of `x` |
+| `median(x)` | median of `x` |
+| `var(x)` | variance of `x` |
+| `range(x)` | range of `x` |
+| `sd(x)` | standard deviation of `x` |
+
 ### Variable types in R
 
 | Variable type | Abbreviation | Example |
