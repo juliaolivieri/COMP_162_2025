@@ -32,6 +32,15 @@ iris$Species
 iris[2:7, c(1, 4)]
 iris[c(4,6), c(2, 5)]
 
+# accessing by column name
+iris[,1]
+iris$Sepal.Length
+vec <- iris$Sepal.Length
+
+# paste command
+paste(4, 3, "hello", "me")
+paste("mean value:", mean(iris$Sepal.Length))
+
 ```
 
 ### Creating data frames
@@ -59,9 +68,11 @@ age <- c(7, 10, 3)
 name <- c("Mittens", "Martha", "Typo")
 feathers <- c(FALSE, FALSE, TRUE)
 ```
-3. Try creating a data frame called `people` with columns `name`, `age`, and `birth_month`. Include entries for at least 4 people.
-4. Use the `View()` command to visualize each of these data frames.
-5. Use the `str()` command on each of these three data frames. What does it tell you?
+3. Use the `paste()` and `sd()` functions to output "the standard deviation of age is <correct value>"
+4. Access the column `feathers` by name using `$` and save it under a different name.
+5. Try creating a data frame called `people` with columns `name`, `age`, and `birth_month`. Include entries for at least 4 people.
+6. Use the `View()` command to visualize each of these data frames.
+7. Use the `str()` command on each of these three data frames. What does it tell you?
 
 ### Loading and exploring a data frame
 
