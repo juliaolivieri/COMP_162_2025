@@ -1,5 +1,6 @@
 # Lecture 6 exercises
 
+Bolded questions are recommended. The rest of the questions are additional practice.
 
 ## Part 1: Data Frames
 
