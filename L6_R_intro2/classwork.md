@@ -36,7 +36,13 @@ iris[c(4,6), c(2, 5)]
 
 ### Creating data frames
 
-1. Try creating your first data frame from the vectors defined in the previous section. Use the following code:
+```
+tesla_price <- c(131.49, 128.78, 127.17, 133.42, 143.75, 143.89, 144.43, 160.27, 177.9, 166.66, 173.22, 181.41, 188.27, 189.98)
+apple_price <- c(135.94, 135.21, 135.27, 137.87, 141.11, 142.53, 141.86, 143.96, 145.93, 143, 144.29, 145.43, 150.82, 154.5)
+date <- c("Jan17", "Jan18", "Jan19", "Jan20", "Jan23", "Jan24", "Jan25", "Jan26", "Jan27", "Jan30", "Jan31", "Feb1", "Feb2", "Feb3")
+```
+
+1. Try creating your first data frame from the vectors defined above. Use the following code:
 
 ```
 stocks <- data.frame(
@@ -87,7 +93,7 @@ We can access rows and columns of data frames using square brackets, similar to 
 
 ### Changing the working directory
 
-1. Now that we are about to start reading and writing data in R, we need to figure out where R thinks we are in our computer's file system. To do this, run the command `getwd()` to get the current working directory.
+1. Now that we are about to start reading and writing data in R, we need to figure out where R thinks we are in our computer's file system. To do this, run the command `getwd()` in the RStudio console to get the current working directory.
   * On a mac this will look something like: `/Users/jolivie1` (except with your username instead of `jolivie1`)
   * On a PC this will look something like: `C:\Users\jolivie1` (except with your username instead of `jolivie1`)
 2. We will now change the working directory to the desktop. If you would prefer to work in another folder, you can set the working directory to whichever folder you would like to work in.
