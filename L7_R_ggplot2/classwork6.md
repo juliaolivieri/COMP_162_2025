@@ -1,4 +1,4 @@
-# Classwork 7: Data Visualization with ggplot2
+# Classwork 6: Data Visualization with ggplot2
 
 
 ## Part 1: Making your first plot
