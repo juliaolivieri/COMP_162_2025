@@ -13,8 +13,12 @@ install.packages("tidyverse")
 library(tidyverse)
 
 # make a scatterplot of displ vs hwy
-ggplot(data = mpg) +
-  geom_point(mapping = aes(x = displ, y = hwy))
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
+  geom_point()
+
+# make the same scatterplot of displ vs hwy
+ggplot(mpg, aes(x = displ, y = hwy)) +
+  geom_point()
 
 ggsave("my_first_plot.png")
 ```
@@ -28,7 +32,7 @@ ggsave("my_first_plot.png")
 1. **(Classwork) Save this plot using `ggsave()` (example command above). You may want to set your working directory to a convenient place for the plot to be output.**
 1. **(Classwork) Make a scatterplot of `hwy` versus `cyl`.**
 1. What can you conclude from this scatterplot?
-1. Run `ggplot(data = mpg)`. What do you see?
+1. Run `ggplot(data = mpg, mapping = aes(x = displ, y = hwy))`. What do you see?
 1. Try switching `hwy` and `displ` between the two axes.+ 
 1. Try using the following commands from last lecture on this data: `head(mpg)`, `head()`, `summary()`, `str()`. 
 1. How many rows does `mpg` have? How many columns?
@@ -40,17 +44,17 @@ ggsave("my_first_plot.png")
 ### Code from class
 ```
 # color points in the scatterplot by class
-ggplot(mpg) +
-  geom_point(aes(displ, hwy, color = class)) 
+ggplot(mpg, aes(displ, hwy, color = class)) +
+  geom_point() 
 
 # using multiple aesthetics
-ggplot(mpg) +
-  geom_point(aes(displ, 
+ggplot(mpg, aes(displ, 
                  hwy, 
                  color = class, 
                  shape = drv, 
                  size = cyl,
-                 alpha = year))
+                 alpha = year)) +
+  geom_point()
 
 ```
 
@@ -71,8 +75,8 @@ ggplot(mpg) +
 ### Code from class
 ```
 # plot displ vs hwy, colored and faceted by class
-ggplot(mpg) +
-  geom_point(aes(displ, hwy, color = class)) +
+ggplot(mpg, aes(displ, hwy, color = class)) +
+  geom_point() +
   facet_wrap(~class)
 ```
 
@@ -89,8 +93,8 @@ ggplot(mpg) +
 ### Code from class
 ```
 # create a histogram from a quantitative variable
-ggplot(mpg) +
-  geom_histogram(aes(hwy))
+ggplot(mpg, aes(hwy)) +
+  geom_histogram()
 
 # Create a histogram of the hwy variable with a bin width of 5
 ggplot(mpg,
@@ -98,12 +102,12 @@ ggplot(mpg,
   geom_histogram(binwidth=5)
 
 # create a bar chart from a categorical variable
-ggplot(mpg) +
-  geom_bar(aes(fl))
+ggplot(mpg, aes(fl)) +
+  geom_bar()
 
 # create "smooth" line from two quantitative variables
-ggplot(data = mpg) +
-  geom_smooth(mapping = aes(x = displ, y = hwy))
+ggplot(mpg, aes(x = displ, y = hwy)) +
+  geom_smooth()
 ```
 
 ### Exercises
