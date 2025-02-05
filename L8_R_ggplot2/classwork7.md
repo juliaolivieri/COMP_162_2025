@@ -23,18 +23,18 @@ table(msleep$vore)
 ### Code from class
 ```
 # Convert the x axis to log scale
-ggplot(msleep) +
-  geom_point(aes(brainwt, sleep_total)) + 
+ggplot(msleep, aes(brainwt, sleep_total)) +
+  geom_point() + 
   scale_x_continuous(trans='log2') 
 
 # Convert the y axis to log scale
-ggplot(msleep) +
-  geom_point(aes(sleep_total,brainwt)) + 
+ggplot(msleep, aes(sleep_total,brainwt)) +
+  geom_point() + 
   scale_y_continuous(trans='log2')
 
 # Convert both axes to log scale
-ggplot(msleep) +
-  geom_point(aes(sleep_total,brainwt)) + 
+ggplot(msleep, aes(sleep_total,brainwt)) +
+  geom_point() + 
   scale_y_continuous(trans='log2') +
   scale_x_continuous(trans='log2')
 ```
@@ -52,25 +52,19 @@ ggplot(msleep) +
 ### Code from class
 ```
 # boxplot of vore vs sleep_total
-ggplot(msleep) +
-  geom_boxplot(aes(vore, sleep_total))
+ggplot(msleep, aes(vore, sleep_total)) +
+  geom_boxplot()
 
 # add point layer to boxplot
-ggplot(msleep) +
-  geom_boxplot(aes(vore, sleep_total)) +
-  geom_point(aes(vore, sleep_total))
+ggplot(msleep, aes(vore, sleep_total)) +
+  geom_boxplot() +
+  geom_point()
 
 # add jitter layer to boxplot
-ggplot(msleep) +
-  geom_boxplot(aes(vore, sleep_total)) +
-  geom_point(aes(vore, sleep_total)) +
-  geom_jitter(aes(vore, sleep_total))
-
-# condensed version of the code
-ggplot(msleep,aes(vore, sleep_total)) +
+ggplot(msleep, aes(vore, sleep_total)) +
   geom_boxplot() +
-  geom_point() +
   geom_jitter()
+
 ```
 
 ### Exercises
