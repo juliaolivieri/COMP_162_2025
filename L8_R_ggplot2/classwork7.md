@@ -133,7 +133,7 @@ write_csv(msleep, "new_sleep.csv")
 ```
 
 ### Exercises
-1. **(CW) Download the following file to your working directory location (this is the desktop if you followed the instructions from the previous section): https://drive.google.com/file/d/1YGKp2pRhVINto56c9lFSLoxKdGD19a4C/view?usp=sharing**
+1. **(CW) Download the following file to your working directory location: https://drive.google.com/file/d/1YGKp2pRhVINto56c9lFSLoxKdGD19a4C/view?usp=sharing**
 1. **(CW) Read this file into a data frame in R using the following command: `tips <- read_csv("tips.csv")`**
 1. View this data frame.
 1. **(CW) Define a new column that is equal to the total amount paid by summing the `total_bill` and `tip` columns.** 
