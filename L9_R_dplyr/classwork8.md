@@ -4,7 +4,7 @@
 1. **(Classwork) Download the Star Wars dataset from this link: https://drive.google.com/file/d/1xdtQtyDZl6X24ZeQNXrqEXAx9BynaLfJ/view?usp=sharing**
 2. **(Classwork) Open a new R script file. This is what you will turn in for today's classwork.**
 3. **(Classwork) Load the tidyverse library (`library(tidyverse)`).**
-4. **(Classwork) Load the Star Wars data with `read_csv(starwars.csv)`. Note that you will need to use `setwd()` to set your working directory to the location of `starwars.csv`. If you have trouble with that, you can use "File --> Import Dataset --> From Text (base)"**
+4. **(Classwork) Load the Star Wars data with `read_csv("starwars.csv")`. Note that you will need to use `setwd()` to set your working directory to the location of `starwars.csv`. If you have trouble with that, you can use "File --> Import Dataset --> From Text (base)"**
 
 ## Part 1: The `arrange()` function
 ### Code from class
