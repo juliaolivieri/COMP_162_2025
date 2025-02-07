@@ -88,7 +88,7 @@ filter(msleep, !is.na(conservation))
 
 ### Exercises
 1. **(CW) Create a data frame called `from_tatooine` that only contains rows for which `homeworld` is equal to `Tatooine`.**
-2. **(CW) Create a data frame called `droids` that contains only rows for which `species == "Droid"`.**
+2. Create a data frame called `droids` that contains only rows for which `species == "Droid"`.
 3. **(CW) Create a data frame that contains only rows for which the eye color is "blue" or "black".**
 4. **(CW) Create a dataframe called `sub_starwars` that only contains rows for which `birth_year` is not NA.**
 5. Try creating a histogram of `birth_year` based on `sub_starwars`.
@@ -125,8 +125,8 @@ grouped_data %>%
 
 ### Exercises
 1. **(CW) Find the average `birth_year` by `gender` using the `sub_starwars` dataframe.**
-2. (CW) Remove rows for which `height` is NA.
-3. (CW) Find the median height of each species. You will need to remove NA values from the height column to do this.
+2. Remove rows for which `height` is NA.
+3. Find the median height of each species. You will need to remove NA values from the height column to do this.
 4. Find the maximum `birth_year` by `homeworld`.
 5. Find the sum of `mass` by `hair_color`.
 
