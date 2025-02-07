@@ -23,9 +23,9 @@ msleep <- arrange(msleep, vore, desc(sleep_total))
 ```
 
 ### Exercises
-1. **(CW) Sort the data frame by `hair_color` and view the result.**
-2. **(CW) Sort the data frame by `birth_year` in descending order.**
-3. **(CW) Sort the data frame by `hair_color` in descending order, then `birth_year` in ascending order.**
+1. **(CW) Sort the starwars data frame by `hair_color` and view the result.**
+2. **(CW) Sort the starwars data frame by `birth_year` in descending order.**
+3. **(CW) Sort the starwars data frame by `hair_color` in descending order, then `birth_year` in ascending order.**
 4. Sort the data frame by `hair_color`, then `birth_year` in descending order.
 5. Who is the tallest Star Wars character?
 6. Who is the shortest Star Wars character who has brown eyes?
