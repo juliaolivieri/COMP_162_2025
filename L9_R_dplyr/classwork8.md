@@ -1,10 +1,10 @@
 # Lecture 9 Classwork
 
 ## Part 0: Setup
-1. **(Classwork) Download the Star Wars dataset from this link: https://drive.google.com/file/d/1xdtQtyDZl6X24ZeQNXrqEXAx9BynaLfJ/view?usp=sharing**
-2. **(Classwork) Open a new R script file. This is what you will turn in for today's classwork.**
-3. **(Classwork) Load the tidyverse library (`library(tidyverse)`).**
-4. **(Classwork) Load the Star Wars data with `read_csv(starwars.csv)`. Note that you will need to use `setwd()` to set your working directory to the location of `starwars.csv`. If you have trouble with that, you can use "File --> Import Dataset --> From Text (base)"**
+1. **(CW) Download the Star Wars dataset from this link: https://drive.google.com/file/d/1xdtQtyDZl6X24ZeQNXrqEXAx9BynaLfJ/view?usp=sharing**
+2. **(CW) Open a new R script file. This is what you will turn in for today's classwork.**
+3. **(CW) Load the tidyverse library (`library(tidyverse)`).**
+4. **(CW) Load the Star Wars data with `read_csv("starwars.csv")`. Note that you will need to use `setwd()` to set your working directory to the location of `starwars.csv`. If you have trouble with that, you can use "File --> Import Dataset --> From Text (base)"**
 
 ## Part 1: The `arrange()` function
 ### Code from class
@@ -23,9 +23,9 @@ msleep <- arrange(msleep, vore, desc(sleep_total))
 ```
 
 ### Exercises
-1. **(CW) Sort the data frame by `hair_color` and view the result.**
-2. **(CW) Sort the data frame by `birth_year` in descending order.**
-3. **(CW) Sort the data frame by `hair_color` in descending order, then `birth_year` in ascending order.**
+1. **(CW) Sort the starwars data frame by `hair_color` and view the result.**
+2. **(CW) Sort the starwars data frame by `birth_year` in descending order.**
+3. **(CW) Sort the starwars data frame by `hair_color` in descending order, then `birth_year` in ascending order.**
 4. Sort the data frame by `hair_color`, then `birth_year` in descending order.
 5. Who is the tallest Star Wars character?
 6. Who is the shortest Star Wars character who has brown eyes?
@@ -88,7 +88,7 @@ filter(msleep, !is.na(conservation))
 
 ### Exercises
 1. **(CW) Create a data frame called `from_tatooine` that only contains rows for which `homeworld` is equal to `Tatooine`.**
-2. **(CW) Create a data frame called `droids` that contains only rows for which `species == "Droid"`.**
+2. Create a data frame called `droids` that contains only rows for which `species == "Droid"`.
 3. **(CW) Create a data frame that contains only rows for which the eye color is "blue" or "black".**
 4. **(CW) Create a dataframe called `sub_starwars` that only contains rows for which `birth_year` is not NA.**
 5. Try creating a histogram of `birth_year` based on `sub_starwars`.
@@ -125,8 +125,8 @@ grouped_data %>%
 
 ### Exercises
 1. **(CW) Find the average `birth_year` by `gender` using the `sub_starwars` dataframe.**
-2. **(CW) Remove rows for which `height` is NA.**
-3. **(CW) Find the median height of each species. You will need to remove NA values from the height column to do this.**
+2. Remove rows for which `height` is NA.
+3. Find the median height of each species. You will need to remove NA values from the height column to do this.
 4. Find the maximum `birth_year` by `homeworld`.
 5. Find the sum of `mass` by `hair_color`.
 
@@ -171,8 +171,7 @@ starwars %>%
 ```
 
 ### Exercises
-1. **(CW) Grouping by species, finding the average height of each species, and sorting by average height **without** the pipe**
-2. **(CW)  Grouping by species, finding the average height of each species, and sorting by average height **with** the pipe**
-3. Try filtering the data frame to columns for which `species` is equal to `Human` and sorting by `birth_year` using `%>%`.
-4. (Challenge) Try stringing the `arrange()`, `select()`, `mutate()`, `filter()`, `group_by()`, and `summarize()` functions all together using `%>%`.
-5. (Challenge) Try re-writing all of the previous classwork questions using `%>%`.
+1. **(CW)  Grouping by species, finding the average height of each species, and sorting by average height **with** the pipe**
+1. Try filtering the data frame to columns for which `species` is equal to `Human` and sorting by `birth_year` using `%>%`.
+1. (Challenge) Try stringing the `arrange()`, `select()`, `mutate()`, `filter()`, `group_by()`, and `summarize()` functions all together using `%>%`.
+1. (Challenge) Try re-writing all of the previous classwork questions using `%>%`.
