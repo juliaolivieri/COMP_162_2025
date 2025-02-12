@@ -1,0 +1,206 @@
+---
+title: "lecture 10 part 1"
+author: "Julia Olivieri"
+date: "2024-02-15"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Load the data
+
+```{r}
+library(tidyverse)
+
+bike_sharing <- read_csv("~/Downloads/bikesharing.csv")
+
+summary(bike_sharing)
+```
+### Weather across all data
+```{r}
+bike_sharing %>%
+  ggplot(aes(weather)) +
+  geom_bar(fill="dodgerblue")
+```
+
+### Weather in the summer
+```{r}
+bike_sharing %>%
+  filter(season=="summer") %>%
+  ggplot(aes(weather)) +
+  geom_bar(fill = "dodgerblue")
+```
+
+## Vignette 1
+
+```{r}
+bike_sharing %>%
+  ggplot(aes(humidity, count)) +
+  geom_point(color="dodgerblue")
+```
+
+```{r}
+bike_sharing %>%
+  ggplot(aes(windspeed, count)) +
+  geom_point(color="dodgerblue")
+```
+```{r}
+bike_sharing %>%
+  ggplot(aes(temperature_F, count)) +
+  geom_point(color="dodgerblue")
+```
+```{r}
+bike_sharing %>%
+  ggplot(aes(temperature_F, count, color=season)) +
+  geom_point()
+```
+```{r}
+bike_sharing %>%
+  ggplot(aes(temperature_F, count, color=season, shape = weather)) +
+  geom_point()
+```
+```{r}
+bike_sharing %>%
+  ggplot(aes(temperature_F, count, color=weather, shape = season)) +
+  geom_point()
+```
+
+```{r}
+bike_sharing %>%
+  mutate(frac_casual = casual/count) %>%
+  ggplot(aes(temperature_F, count, color=season, shape = weather, size=frac_casual)) +
+  geom_point()
+```
+
+```{r}
+bike_sharing %>%
+  mutate(frac_casual = casual/count) %>%
+  ggplot(aes(temperature_F, count, color=frac_casual)) +
+  geom_point()
+```
+
+```{r}
+bike_sharing %>%
+  ggplot(aes(temperature_F, count, color=weather, shape = season)) +
+  geom_point() + 
+  labs(title = "Effect of weather conditions on number of riders", x = "temperature (F)", y = "number of riders")
+
+```
+
+```{r}
+bike_sharing %>%
+  filter(season == "summer") %>%
+  arrange(count) %>%
+  head()
+```
+
+```{r}
+bike_sharing %>%
+  filter(season == "fall") %>%
+  arrange(count) %>%
+  head()
+```
+## Vignette 2
+
+What affects the number of casual riders on a given day?
+
+```{r}
+bike_sharing %>%
+  mutate(frac_casual = casual/count) %>%
+  ggplot(aes(date, frac_casual)) +
+  geom_point(color="dodgerblue")
+```
+```{r}
+bike_sharing %>%
+  filter(year == 2011) %>%
+  mutate(frac_casual = casual/count) %>%
+  ggplot(aes(date, frac_casual)) +
+  geom_point(color="dodgerblue")
+```
+
+```{r}
+bike_sharing %>%
+  filter(year == 2011) %>%
+  mutate(frac_casual = casual/count) %>%
+  ggplot(aes(date, frac_casual, color = season)) +
+  geom_point()
+```
+```{r}
+bike_sharing %>%
+  filter(year == 2011) %>%
+  mutate(frac_casual = casual/count) %>%
+  ggplot(aes(date, frac_casual, color = temperature_F)) +
+  geom_point()
+```
+```{r}
+bike_sharing %>%
+  filter(year == 2011) %>%
+  mutate(frac_casual = casual/count) %>%
+  ggplot(aes(date, frac_casual, color = humidity)) +
+  geom_point()
+```
+```{r}
+bike_sharing %>%
+  filter(year == 2011) %>%
+  mutate(frac_casual = casual/count) %>%
+  ggplot(aes(date, frac_casual, color = workingday)) +
+  geom_point()
+```
+```{r}
+bike_sharing %>%
+  filter(year == 2011) %>%
+  mutate(frac_casual = casual/count) %>%
+  ggplot(aes(date, frac_casual, color = workingday, size = holiday)) +
+  geom_point()
+```
+
+```{r}
+bike_sharing %>%
+  filter(year == 2011) %>%
+  mutate(frac_casual = casual/count) %>%
+  ggplot(aes(date, frac_casual, color = workingday)) +
+  geom_point() +
+  labs(title="Fraction of casual riders by date in 2011", y = "fraction of casual riders")
+```
+```{r}
+bike_sharing %>%
+  mutate(frac_casual = casual/count) %>%
+  filter(workingday == TRUE) %>%
+  filter(year == 2011) %>%
+  arrange(desc(frac_casual)) %>%
+  select(frac_casual, date)
+```
+
+## Vignette 3
+
+```{r}
+bike_sharing %>%
+  ggplot(aes(weather)) +
+  geom_bar(fill = "dodgerblue")
+```
+```{r}
+bike_sharing %>%
+  ggplot(aes(weather, fill=season)) +
+  geom_bar()
+```
+```{r}
+bike_sharing %>%
+  ggplot(aes(weather, fill=season)) +
+  geom_bar() +
+  facet_wrap(~season)
+```
+
+```{r}
+bike_sharing %>%
+  ggplot(aes(weather, fill=season)) +
+  geom_bar(position="dodge") +
+  labs(title="weather by season")
+```
+```{r}
+bike_sharing %>%
+  ggplot(aes(season, fill=weather)) +
+  geom_bar(position="dodge") +
+  labs(title="Season by weather")
+```

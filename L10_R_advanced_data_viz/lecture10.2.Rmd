@@ -1,0 +1,247 @@
+---
+title: "Lecture 10 part 2"
+author: "Julia Olivieri"
+date: "2024-02-15"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Load the data
+
+```{r}
+library(tidyverse)
+
+bike_sharing <- read_csv("~/Downloads/bikesharing.csv")
+
+```
+
+
+```{r}
+bike_sharing %>%
+  mutate(new_col = count/temperature_F) %>%
+  ggplot(aes(date, new_col)) +
+  geom_point()
+```
+
+```{r}
+bike_sharing %>%
+  ggplot(aes(weather, fill=weekday)) +
+  geom_bar(position="dodge")
+```
+```{r}
+bike_sharing %>%
+  ggplot(aes(weekday, fill=weather)) +
+  geom_bar(position="dodge")
+```
+
+## Vignette 4
+
+```{r}
+bike_sharing %>%
+  ggplot(aes(temperature_F)) +
+  geom_histogram(fill="dodgerblue")
+```
+```{r}
+bike_sharing %>%
+  ggplot(aes(temperature_F, fill=season)) +
+  geom_histogram()
+```
+```{r}
+bike_sharing %>%
+  ggplot(aes(temperature_F, fill=season)) +
+  geom_histogram() +
+  facet_wrap(~season)
+```
+```{r}
+bike_sharing %>%
+  ggplot(aes(temperature_F, fill=season)) +
+  geom_histogram() +
+  geom_freqpoly() +
+  facet_wrap(~season)
+```
+
+```{r}
+bike_sharing %>%
+  ggplot(aes(temperature_F, color=season)) +
+  geom_freqpoly()
+```
+```{r}
+bike_sharing %>%
+  filter(season == "winter" | season == "summer") %>%
+  ggplot(aes(temperature_F, color=season)) +
+  geom_freqpoly()
+```
+```{r}
+bike_sharing %>%
+  filter(season == "winter" | season == "summer") %>%
+  ggplot(aes(temperature_F, color=season)) +
+  geom_density()
+```
+```{r}
+bike_sharing %>%
+  ggplot(aes(temperature_F, color=season)) +
+  geom_density()
+```
+```{r}
+bike_sharing %>%
+  ggplot(aes(temperature_F, color=season)) +
+  geom_density() +
+  labs(title = "Temperature by season")
+```
+
+## Vignette 5
+
+```{r}
+bike_sharing %>% 
+  ggplot(aes(season, humidity)) +
+  geom_point(color = "dodgerblue")
+```
+```{r}
+bike_sharing %>% 
+  ggplot(aes(season, humidity)) +
+  geom_jitter(color = "dodgerblue")
+```
+```{r}
+bike_sharing %>% 
+  ggplot(aes(season, humidity)) +
+  geom_boxplot()
+```
+```{r}
+bike_sharing %>% 
+  ggplot(aes(season, humidity)) +
+  geom_jitter() +
+  geom_boxplot() 
+```
+```{r}
+bike_sharing %>% 
+  ggplot(aes(season, humidity, fill=weather)) +
+  geom_boxplot()
+```
+## Vignette 6
+
+```{r}
+bike_sharing %>%
+  ggplot(aes(date, count)) +
+  geom_point()
+```
+```{r}
+bike_sharing %>%
+  ggplot(aes(date_noyear, count)) +
+  geom_point()
+```
+
+```{r}
+bike_sharing %>%
+  ggplot(aes(date_noyear, count, color=year)) +
+  geom_point()
+```
+```{r}
+bike_sharing %>%
+  ggplot(aes(date_noyear, count, color=year)) +
+  geom_line()
+```
+```{r}
+bike_sharing %>%
+  ggplot(aes(date_noyear, count, color=year, group=year)) +
+  geom_line()
+```
+```{r}
+bike_sharing %>%
+  ggplot(aes(date_noyear, count, color=year, group=year)) +
+  geom_line() +
+  geom_point()
+```
+```{r}
+bike_sharing %>%
+  ggplot(aes(date_noyear, count, color=year, group=year)) +
+  geom_line() +
+  geom_smooth()
+```
+
+```{r}
+bike_sharing %>%
+  ggplot(aes(date_noyear, count, color=year, group=year)) +
+  geom_line() +
+  geom_smooth() +
+  labs(title="number of riders by date", y = "number of riders", x = "date")
+```
+
+## Vignette 7
+
+```{r}
+starwars %>%
+  ggplot(aes(homeworld)) +
+  geom_bar(fill="dodgerblue")
+```
+
+```{r}
+starwars %>%
+  group_by(homeworld) %>%
+  summarize(count=n()) %>%
+  filter(count > 1) %>%
+  ggplot(aes(count, homeworld)) +
+  geom_bar(stat = "identity", fill="dodgerblue")
+```
+
+```{r}
+starwars %>%
+  drop_na(homeworld) %>%
+  group_by(homeworld) %>%
+  summarize(count=n()) %>%
+  filter(count > 1) %>%
+  ggplot(aes(count, homeworld)) +
+  geom_bar(stat = "identity", fill="dodgerblue")
+```
+```{r}
+starwars %>%
+  drop_na(homeworld) %>%
+  group_by(homeworld) %>%
+  summarize(count=n()) %>%
+  filter(count > 1) %>%
+  ggplot(aes(count, reorder(homeworld, count))) +
+  geom_bar(stat = "identity", fill="dodgerblue") +
+  labs(title="Frequency of homeworld in Star Wars", y = "homeworld")
+```
+
+```{r}
+starwars %>%
+  ggplot(aes(species)) +
+  geom_bar()
+```
+```{r}
+starwars %>%
+  group_by(species) %>%
+  summarize(count = n()) %>%
+  ggplot(aes(species, count)) +
+  geom_bar(stat="identity")
+```
+```{r}
+starwars %>%
+  group_by(species) %>%
+  summarize(count = n()) %>%
+  filter(count > 1) %>%
+  ggplot(aes(species, count)) +
+  geom_bar(stat="identity")
+```
+
+```{r}
+starwars %>%
+  group_by(species) %>%
+  summarize(count = n()) %>%
+  filter(count > 1) %>%
+  ggplot(aes(count, species)) +
+  geom_bar(stat="identity")
+```
+```{r}
+starwars %>%
+  drop_na(homeworld) %>%
+  drop_na(species) %>%
+  group_by(species) %>%
+  summarize(count = n()) %>%
+  filter(count > 1) %>%
+  ggplot(aes(count, reorder(species, count))) +
+  geom_bar(stat="identity")
+```
