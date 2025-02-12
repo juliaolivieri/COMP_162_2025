@@ -47,13 +47,13 @@ Code from class is available here: https://juliaolivieri.github.io/COMP_162_2024
 
 Code from class is available here: https://juliaolivieri.github.io/COMP_162_2024/lecture10.2.html 
 
-1. Create a plot of `windspeed` by `season`. Try using `geom_freqpoly()`, `geom_density()`, and `geom_histogram()`. Which visualization do you prefer?
-1. Try filtering these plots to just `fall` and `spring`.
+1. **(CW) Create a plot of `windspeed` by `season`. Try using `geom_freqpoly()`, `geom_density()`, and `geom_histogram()`. Which visualization do you prefer?**
+1. **(CW) Try filtering these plots to just `fall` and `spring`.**
 1. Create a box plot of `windspeed` by `season`. Choose another categorical variable to set `fill` to.
 1. Create a `geom_line()` plot of `temperature_F` vs `date_noyear`. Add smoothing with `geom_smooth()`. Were there big temperature differences between the two years?
 1. Create a plot of `humidity` by `month`. Try using `geom_freqpoly()`, `geom_density()`, and `geom_histogram()`. Which visualization do you prefer?
 1. Try adding points to the plot above with `geom_jitter()`. Do you prefer the plot with or without these points?
-1. Create a box plot of `humidity` by `month`. Choose a variable to set `fill` to.
+1. **(CW) Create a box plot of `humidity` by `month`. Choose a variable to set `fill` to.**
 1. Create a `geom_line()` plot of `temperature_F` vs `date_noyear`. Add smoothing with `geom_smooth()`. Were there big temperature differences between the two years?
 1. Create a bar plot showing the frequency of each kind of species in the Star Wars data. Drop rows for which `homeworld` is NA. Only include species that appear more than once in the data. Sort the bars by frequency.
 1. Try using these techniques to visualize relationships in either dataset.
