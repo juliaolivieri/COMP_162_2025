@@ -3,7 +3,7 @@
 ## Part 1: Bike sharing exploration
 1. **(CW) Download the bike sharing data: https://drive.google.com/file/d/1mXb31YZpPXnDu7PV2KkJ0A5Y_UwCiPaP/view?usp=sharing.**
 2. **(CW) Create a new R Markdown file and load the data in. Directions here: Instructions here: https://github.com/juliaolivieri/COMP_162_2024/blob/main/lecture10/R_Markdown_intro.md**
-3.**(CW) Load the `tidyverse` library**
+3. **(CW) Load the `tidyverse` library**
 4. **(CW) Create at least one of each of the following types of plots:**
   * `geom_bar()` 
   * `geom_histogram()` 
