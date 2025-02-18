@@ -4,21 +4,6 @@
 
 ### Code from class
 ```
-# creating a histogram visualization
-bike_sharing %>%
-  ggplot(aes(temperature_F, fill=season)) +
-  geom_histogram()
-
-# creating a freqpoly visualization
-bike_sharing %>%
-  ggplot(aes(temperature_F, color=season)) +
-  geom_freqpoly()
-
-# creating a density visualization
-bike_sharing %>%
-  ggplot(aes(temperature_F, color=season)) +
-  geom_density()
-
 # sorting box plot by mean temperature
 bike_sharing %>%
   ggplot(aes(reorder(month, temperature_F), temperature_F)) +
