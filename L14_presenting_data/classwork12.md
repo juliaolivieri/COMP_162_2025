@@ -1,5 +1,19 @@
 ## Classwork 12: Presenting data
 
+## Code from class: recoding columns
+
+```
+ufos <- mutate(ufos, state = recode(state, tx = "Texas", ct="Connecticut"))
+
+ufos <- mutate(ufos, state = recode(state, tx = "Texas"))
+
+ufos <- mutate(ufos, red = str_detect(tolower(comments), "red"))
+
+ufos <- mutate(ufos, red = recode(as.character(red), `TRUE`="red", `FALSE`="not red"))
+
+
+```
+
 1. You are given a new dataset. What are the steps you’d perform to analyze the data?
 1. What are some rules for good presentation design?
 1. What could be improved about this slide? ![example plot](https://github.com/juliaolivieri/COMP_162_2025/blob/f1662c8d72af0cca4725b878278ff83744762338/L14_presenting_data/example_slide.png)
