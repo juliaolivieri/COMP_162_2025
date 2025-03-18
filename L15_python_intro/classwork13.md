@@ -1,5 +1,7 @@
 # Classwork 13
 
+## Part 1
+
 ## Install Anaconda
 
 If you can't find the "Anaconda-Navigator" Application on your computer, you should install it. 
@@ -103,13 +105,13 @@ math.sqrt(x)
 1. The Python Standard Library includes a module random containing a function `randint()`. Given two integers, `randint()` will contain an integer in that range. For example, `randint(1,6)` will return an integer between 1 and 6 (inclusive). Use this function to find a random number between 0 and 36.
 1. What happens when you set a random seed with the `seed()` function before running `randint()`? Why might this function be useful? https://docs.python.org/3/library/random.html
 
-# Classwork 15
+## Part 2
 
-Mapping between R and Python commands: https://github.com/juliaolivieri/COMP_162_2024/blob/main/lecture15/python_R_translation.md
+Mapping between R and Python commands: [https://github.com/juliaolivieri/COMP_162_2024/blob/main/lecture15/python_R_translation.md](https://github.com/juliaolivieri/COMP_162_2025/blob/main/L15_python_intro/python_R_translation.md)
 
 Dataset used in class examples:`taxis.csv`, https://drive.google.com/file/d/1yzcou-mgYXhanO_gP69TZyEC_2S5sm0f/view?usp=sharing
 
-## Part 1
+
 
 ### Reading and writing data
 
@@ -169,33 +171,5 @@ taxis["payment"].value_counts()
 1. How many penguins are from each island in the dataset?
 
 
-### Indexing
 
-#### Code from class
-
-```
-# create dataframe
-animals = pd.DataFrame.from_dict({"species" : ["dog", "cat", "penguin"], 
-                                  "size" : [40, 10, 80], 
-                                  "name" : ["Typo", "Ralph", "Pinky"], 
-                                  "age" : [5, 18, 12]})
-
-# two ways to index into the same value
-animals.iloc[0,0]
-animals.loc[3, "species"]
-
-# two ways to index into the same value
-animals.iloc[0:2, 1:4]
-animals.loc[[3, 6],["size", "name", "age"]]
-```
-
-#### Exercises
-
-1. **(CW) Display the mining dataset.**
-1. **(CW) Index into the "pearl" entry using `.iloc[]`**
-1. Index into the "diamond" entry using `.loc[]`
-1. Use `.iloc[]` to subset to a DataFrame only containing gems, and no "rock"
-1. **(CW) Use `.loc[]` to subset to a DataFrame only containing gems, and no "rock"**
-1. Assign an entry to be "topaz" and an entry to be "amethyst" in such a way that you can still index to include all gems and no "rock". Use both methods to index into only the gems in the augmented DataFrame.
-1. Translate this R script to a python script up through `summary(taxis)` (so, create a jupyter notebook that performs this same analysis): https://juliaolivieri.github.io/
 
