@@ -119,7 +119,7 @@ Dataset used in class examples:`taxis.csv`, https://drive.google.com/file/d/1yzc
 
 ```
 # read dataframe
-pd.read_csv("taxis.csv")
+taxis = pd.read_csv("taxis.csv")
 
 # write dataframe
 taxis.to_csv("new_taxis.csv", index = False)
