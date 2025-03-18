@@ -103,25 +103,99 @@ math.sqrt(x)
 1. The Python Standard Library includes a module random containing a function `randint()`. Given two integers, `randint()` will contain an integer in that range. For example, `randint(1,6)` will return an integer between 1 and 6 (inclusive). Use this function to find a random number between 0 and 36.
 1. What happens when you set a random seed with the `seed()` function before running `randint()`? Why might this function be useful? https://docs.python.org/3/library/random.html
 
-## Looking ahead: Data and visualization in Python
+# Classwork 15
 
-We will be using pandas, matplotlib, and seaborn to load and visualize data in Python. If you have extra time, you can get a head start on using these tools. 
+Mapping between R and Python commands: https://github.com/juliaolivieri/COMP_162_2024/blob/main/lecture15/python_R_translation.md
 
-You can copy this code into your jupyter notebook and run it (try installing the libraries if they are not found). Then see whether you can make different scatterplots with different colorings by switching the columns assigned to `x`, `y`, and `hue`.
+Dataset used in class examples:`taxis.csv`, https://drive.google.com/file/d/1yzcou-mgYXhanO_gP69TZyEC_2S5sm0f/view?usp=sharing
+
+## Part 1
+
+### Reading and writing data
+
+#### Code from class
 
 ```
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
+# read dataframe
+pd.read_csv("taxis.csv")
 
-# load data from a csv
-iris = pd.read_csv("https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv")
-
-# display the dataframe
-display(iris)
-
-# create a scatterplot 
-sns.relplot(data = iris, x = "sepal_length", y = "sepal_width", hue = "species")
-plt.show()
+# write dataframe
+taxis.to_csv("new_taxis.csv", index = False)
 ```
+
+#### Exercises
+
+1. **(CW) Import the required packages for these exercises:**
+   ```
+   import matplotlib.pyplot as plt
+   import pandas as pd
+   import seaborn as sns
+   ```
+1. **(CW) Load `penguins.csv` into your notebook using `pd.read_csv()`. Save the dataframe to a variable called `penguins`. Link to dataset: https://drive.google.com/file/d/1ESxaIakPh6IpsA_x1H1798003CuqJP8r/view?usp=sharing**
+2. **(CW) Load `mining.csv` into your notebook. Save this dataframe to a variable called `mining`. Link to dataset: https://drive.google.com/file/d/1Z6_ejcVUrmB39BO3GJ2bmwD8lrrX2TvW/view?usp=sharing**
+
+### Descriptive statistics
+
+#### Code from class
+
+```
+# find number of rows and columns
+taxis.shape
+
+# display first 10 rows
+taxis.head(10)
+
+# display last 8 rows
+taxis.tail(8)
+
+# Output summary information about column types
+taxis.info()
+
+# Output summary statistics for each column
+taxis.describe(include = "all")
+
+# Find the frequency of each value of a categorical column
+taxis["payment"].value_counts()
+```
+
+#### Exercises
+
+1. **(CW) Find the number of rows and columns of the penguins dataset.** 
+1. **(CW) Display the last 6 rows of the penguins dataset.**
+1. **(CW) Display the mining dataset.**
+1. **(CW) Classify the variables of the penguins dataset. Use `.info()` to help you.**
+1. **(CW) Find summary statistics for each column of the penguins dataset, using the `.describe(include = "all")`  method.**
+1. **(CW) How many penguins of each species are in the datset?**
+1. How many penguins are from each island in the dataset?
+
+
+### Indexing
+
+#### Code from class
+
+```
+# create dataframe
+animals = pd.DataFrame.from_dict({"species" : ["dog", "cat", "penguin"], 
+                                  "size" : [40, 10, 80], 
+                                  "name" : ["Typo", "Ralph", "Pinky"], 
+                                  "age" : [5, 18, 12]})
+
+# two ways to index into the same value
+animals.iloc[0,0]
+animals.loc[3, "species"]
+
+# two ways to index into the same value
+animals.iloc[0:2, 1:4]
+animals.loc[[3, 6],["size", "name", "age"]]
+```
+
+#### Exercises
+
+1. **(CW) Display the mining dataset.**
+1. **(CW) Index into the "pearl" entry using `.iloc[]`**
+1. Index into the "diamond" entry using `.loc[]`
+1. Use `.iloc[]` to subset to a DataFrame only containing gems, and no "rock"
+1. **(CW) Use `.loc[]` to subset to a DataFrame only containing gems, and no "rock"**
+1. Assign an entry to be "topaz" and an entry to be "amethyst" in such a way that you can still index to include all gems and no "rock". Use both methods to index into only the gems in the augmented DataFrame.
+1. Translate this R script to a python script up through `summary(taxis)` (so, create a jupyter notebook that performs this same analysis): https://juliaolivieri.github.io/
 
