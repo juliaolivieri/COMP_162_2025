@@ -127,11 +127,9 @@ taxis.to_csv("new_taxis.csv", index = False)
 
 #### Exercises
 
-1. **(CW) Import the required packages for these exercises:**
+1. **(CW) Import the required package for these exercises:**
    ```
-   import matplotlib.pyplot as plt
    import pandas as pd
-   import seaborn as sns
    ```
 1. **(CW) Load `penguins.csv` into your notebook using `pd.read_csv()`. Save the dataframe to a variable called `penguins`. Link to dataset: https://drive.google.com/file/d/1ESxaIakPh6IpsA_x1H1798003CuqJP8r/view?usp=sharing**
 2. **(CW) Load `mining.csv` into your notebook. Save this dataframe to a variable called `mining`. Link to dataset: https://drive.google.com/file/d/1Z6_ejcVUrmB39BO3GJ2bmwD8lrrX2TvW/view?usp=sharing**
