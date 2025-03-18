@@ -1,5 +1,10 @@
 # Classwork 13
 
+## Part 0
+
+1. What are the benefits of using R for data analytics? What are the limitations of using R for data analytics?
+2. Why learn both Python and R?
+
 ## Part 1
 
 ## Install Anaconda
@@ -168,6 +173,5 @@ taxis["payment"].value_counts()
 1. **(CW) How many penguins of each species are in the datset?**
 1. How many penguins are from each island in the dataset?
 
-
-
+Please upload the .ipynb file for your submission.
 
