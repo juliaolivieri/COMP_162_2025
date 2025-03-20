@@ -4,6 +4,7 @@ Mapping between R and Python commands: https://github.com/juliaolivieri/COMP_162
 
 Dataset used in class examples:`taxis.csv`, https://drive.google.com/file/d/1yzcou-mgYXhanO_gP69TZyEC_2S5sm0f/view?usp=sharing
 
+## Part 1
 
 ### Indexing
 
@@ -27,6 +28,8 @@ animals.loc[[3, 6],["size", "name", "age"]]
 
 #### Exercises
 
+1. **(CW) Create a new jupyter notebook. Import pandas, matplotlib, and seaborn. You will submit this file in your classwork assignment for today's class.**
+1. Load the mining and penguins datasets from last class (https://github.com/juliaolivieri/COMP_162_2025/blob/main/L15_python_intro/classwork13.md).
 1. **(CW) Display the mining dataset.**
 1. **(CW) Index into the "pearl" entry using `.iloc[]`**
 1. Index into the "diamond" entry using `.loc[]`
@@ -34,8 +37,6 @@ animals.loc[[3, 6],["size", "name", "age"]]
 1. **(CW) Use `.loc[]` to subset to a DataFrame only containing gems, and no "rock"**
 1. Assign an entry to be "topaz" and an entry to be "amethyst" in such a way that you can still index to include all gems and no "rock". Use both methods to index into only the gems in the augmented DataFrame.
 1. Translate this R script to a python script up through `summary(taxis)` (so, create a jupyter notebook that performs this same analysis): https://juliaolivieri.github.io/
-
-## Part 2
 
 ### Filtering and sorting
 
@@ -89,6 +90,7 @@ plt.show()
 1. There are many different kinds of plots you can make with the `displot()` function. What happens when you use an x and y variable? 
 1. Test out other displot options based on this document: https://seaborn.pydata.org/tutorial/distributions.html 
 
+## Part 2
 
 
 ### Exercises 
@@ -102,22 +104,16 @@ plt.show()
 1. **(CW) Make at least one plot based on this data using the `displot` function.**
 1. **(CW) Brainstorm at least three plots that would help you understand this data. Which variable(s) are involved? Are they quantitative or categorical?**
 
-## Classwork 2
+## Part 3
 
-**(CW) Summarize the information presented in this plot in ~1 sentence.**
+1. **(CW) Summarize the information presented in this plot in ~1 sentence.**
 <img src="https://raw.githubusercontent.com/juliaolivieri/COMP_162_2024/main/lecture16/flipper_density.png" height="400" />
-
-## Classwork 3
-
-**(CW) Summarize the information presented in this plot in ~1 sentence.**
+1. **(CW) Summarize the information presented in this plot in ~1 sentence.**
 <img src="https://raw.githubusercontent.com/juliaolivieri/COMP_162_2024/main/lecture16/example_scatter.png" height="400" />
-
-## Classwork 4
-
-**(CW) Summarize the information presented in this plot in ~1 sentence.**
+1. **(CW) Summarize the information presented in this plot in ~1 sentence.**
 <img src="https://raw.githubusercontent.com/juliaolivieri/COMP_162_2024/main/lecture16/example_box.png" height="400" />
 
-## Classwork 5
+## Part 4 
 
 Example code from class:
 
