@@ -172,7 +172,7 @@ Documentation for functions:
 1. **(CW) Make a plot of a categorical variable vs a quantitative variable using `catplot()`. Set `hue` equal to a categorical variable. Try with `kind` equal to each of the following: `"strip", "swarm", "box", "violin", "boxen", "point", "bar"`. Which provides the best representation of your data?**
 1. **(CW) Create at least one of the plots you brainstormed in Classwork 1.**
 1. Work on improving one of your plots so that it enhances understanding of the dataset. Save it by including `plt.savefig("my_img.png")` on the line before `plt.show()`.
-1. **(CW) Submit your favorite plot: [https://forms.gle/SFBcSFnZg1i97er57](https://forms.gle/wkkeQbgUdA4NgUMA8)**
+1. **(CW) Submit your favorite plot: [https://forms.gle/P7ZEUeKV8JSZei4m9](https://forms.gle/P7ZEUeKV8JSZei4m9)**
 
 
 
