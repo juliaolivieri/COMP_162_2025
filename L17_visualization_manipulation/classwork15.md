@@ -60,7 +60,7 @@ Use the college majors dataset: https://drive.google.com/file/d/1WK9sQdr_S7RHDUI
 
 1. **(CW) Make a plot of a quantitative variable using `displot()`. Set `hue` equal to a categorical variable. Try with `kind = "hist"` and `kind = "kde"`. Which provides a better representation of your data?**
 1. **(CW) Make a plot of a categorical variable vs a quantitative variable using `catplot()`. Set `hue` equal to a categorical variable. Try with `kind` equal to each of the following: `"strip", "swarm", "box", "violin", "boxen", "point", "bar"`. Which provides the best representation of your data?**
-1. **(CW) Create at least one of the plots you brainstormed in Classwork 1.**
+1. **(CW) Create at least one of the plots you brainstormed in last classwork (Brainstorm at least three plots that would help you understand this data).**
 1. Work on improving one of your plots so that it enhances understanding of the dataset. Save it by including `plt.savefig("my_img.png")` on the line before `plt.show()`.
 1. **(CW) Submit your favorite plot: [https://forms.gle/P7ZEUeKV8JSZei4m9](https://forms.gle/P7ZEUeKV8JSZei4m9)**
 
