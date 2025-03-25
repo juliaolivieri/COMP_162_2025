@@ -182,50 +182,5 @@ books = books[books["Publisher"].isin(["Harper Collins", "Penguin Books", "Simon
 1. Are there other columns it would make sense to filter on to clean up the data? Perform more filtering as you see fit.
 1. **(CW)) Create a scatterplot with at least one of the axes log-scaled.**
 
-## Part 6
 
-### Code from class
-
-```
-books["RatingsPlusReviews"] = books["RatingDistTotal"] + books["CountsOfReviews"]	
-books["fracRated1"] = books["RatingDist1"]/books["RatingDistTotal"]
-books["Rated5MinusRated1"] = books["RatingDist5"] - books["RatingDist1"]
-books["Penguin"] = ((books["Publisher"] == "Penguin Books") | (books["Publisher"] == "Penguin Classics"))
-```
-
-### Exercises
-
-
-1. **(CW) Assign a column called ”FracRated5” that’s the fraction of the total ratings (”RatingDistTotal”) that are equal to 5 (”RatingDist5”)**
-1. What happens when you add two columns containing strings? Try adding the ”Authors” and ”Name” columns.
-1. **(CW) Create a new column of your choosing.**
-1. Assign a column called ”OneFiveRating” that’s equal to the average rating for the book if only 1-star and 5-star ratings are considered
-
-## Part 7
-
-### Code from class
-
-```
-books["Length"] = "tiny"
-books.loc[books["pagesNumber"] > 20, "Length"] = "short"
-books.loc[books["pagesNumber"] > 150, "Length"] = "medium"
-books.loc[books["pagesNumber"] > 400, "Length"] = "long"
-```
-
-### Exercises
-
-1. **(CW) Assign a new variable called “Season” based on the “PublishMonth” column. Let “Season”  be defined as follows:**
-      * “Season” equals “Winter”  if “PublishMonth”  equals 1, 2, or 3
-      * “Season”  equals “Spring”  if “PublishMonth” equals 4, 5, or 6
-      * “Season”  equals “Summer” if “PublishMonth” equals 7, 8, or 9
-      * “Season”  equals “Fall”  if “PublishMonth” equals 10, 11, or 12
-1.  Define the following columns:
-      * “TimePeriod” based on the “PublishYear” column, with at least 4 categories.
-      * “Popularity” based on the “RatingDistTotal” column, with at least 3 categories.
-
-## Part 8
-
-Now that we have learned more data manipulation techniques in Python, we can apply them to answer our questions from the beginning. Work on addressing as many of the questions that you brainstormed as you can. The goal is to create an expansive analysis encompassing interesting findings from the dataset.
-
-**(CW) Create at least one plot or analysis to answer a question you brainstormed above.**
 
