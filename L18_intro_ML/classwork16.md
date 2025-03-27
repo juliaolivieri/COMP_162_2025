@@ -1,179 +1,149 @@
-# Classwork 14
-
-Mapping between R and Python commands: https://github.com/juliaolivieri/COMP_162_2024/blob/main/lecture15/python_R_translation.md
-
-Dataset used in class examples:`taxis.csv`, https://drive.google.com/file/d/1yzcou-mgYXhanO_gP69TZyEC_2S5sm0f/view?usp=sharing
+# Classwork 16
 
 ## Part 1
 
-### Indexing
+### Adding columns
 
-#### Code from class
-
-```
-# create dataframe
-animals = pd.DataFrame.from_dict({"species" : ["dog", "cat", "penguin"], 
-                                  "size" : [40, 10, 80], 
-                                  "name" : ["Typo", "Ralph", "Pinky"], 
-                                  "age" : [5, 18, 12]})
-
-# two ways to index into the same value
-animals.iloc[0,0]
-animals.loc[3, "species"]
-
-# two ways to index into the same value
-animals.iloc[0:2, 1:4]
-animals.loc[[3, 6],["size", "name", "age"]]
-```
-
-#### Exercises
-
-1. **(CW) Create a new jupyter notebook. Import pandas, matplotlib, and seaborn. You will submit this file in your classwork assignment for today's class.**
-1. Load the mining and penguins datasets from last class (https://github.com/juliaolivieri/COMP_162_2025/blob/main/L15_python_intro/classwork13.md).
-1. **(CW) Display the mining dataset.**
-1. **(CW) Index into the "pearl" entry using `.iloc[]`**
-1. Index into the "diamond" entry using `.loc[]`
-1. Use `.iloc[]` to subset to a DataFrame only containing gems, and no "rock"
-1. **(CW) Use `.loc[]` to subset to a DataFrame only containing gems, and no "rock"**
-1. Assign an entry to be "topaz" and an entry to be "amethyst" in such a way that you can still index to include all gems and no "rock". Use both methods to index into only the gems in the augmented DataFrame.
-1. Translate this R script to a python script up through `summary(taxis)` (so, create a jupyter notebook that performs this same analysis): https://juliaolivieri.github.io/
-
-### Filtering and sorting
-
-#### Code from class
+### Code from class
 
 ```
-# subset to selected columns
-taxis[["fare", "payment", "pickup_zone", "pickup_borough"]]
-
-# subset to only rows for which the color is green
-taxis[taxis["color"] == "green"]
-
-# subset to only rows for which the fare is less than 5
-taxis[taxis["fare"] < 5]
-
-# sort dataframe by fare
-taxis.sort_values("fare")
+books["RatingsPlusReviews"] = books["RatingDistTotal"] + books["CountsOfReviews"]	
+books["fracRated1"] = books["RatingDist1"]/books["RatingDistTotal"]
+books["Rated5MinusRated1"] = books["RatingDist5"] - books["RatingDist1"]
+books["Penguin"] = ((books["Publisher"] == "Penguin Books") | (books["Publisher"] == "Penguin Classics"))
 ```
 
-#### Exercises
+### Exercises
 
-1. **(CW) Sort the penguins dataframe by `bill_length_mm`.**
-1. **(CW) Subset the penguins dataframe to only the categorical columns. Save the result as `cat_penguins`.**
-1. **(CW) Subset the penguins dataframe to only rows for which the `bill_depth_mm` is greater than 17. Call this `bigbill_penguins`.**
-1. **(CW) Write the dataframe `bigbill_penguins` to a csv.**
-1. Filter to only rows for which `species` is `Adelie` or `Gentoo`.
-1. Filter to only rows for which the `bill_length_mm` is less than 40 but the `bill_depth_mm` is greater than 20.
-1. What is the length of the longest bill of an Adelie penguin?
-1. Of the Gentoo penguins, how many are male and how many are female?
-1. Continue translating this R script into a python script (so, create a jupyter notebook that performs this same analysis): https://juliaolivieri.github.io/
-1. For any of these commands, do you prefer the syntax or output from R rather than Python, or vice versa?
+1. Load the "books" data from last class.
+1. **(CW) Assign a column called ”FracRated5” that’s the fraction of the total ratings (”RatingDistTotal”) that are equal to 5 (”RatingDist5”)**
+1. What happens when you add two columns containing strings? Try adding the ”Authors” and ”Name” columns.
+1. **(CW) Create a new column of your choosing.**
+1. Assign a column called ”OneFiveRating” that’s equal to the average rating for the book if only 1-star and 5-star ratings are considered
 
-### Plotting
+### Quantitative to categorical
 
-#### Code from class
+### Code from class
 
 ```
-# create a histogram for fare
-sns.displot(data = taxis, x = "fare")
-plt.show()
+books["Length"] = "tiny"
+books.loc[books["pagesNumber"] > 20, "Length"] = "short"
+books.loc[books["pagesNumber"] > 150, "Length"] = "medium"
+books.loc[books["pagesNumber"] > 400, "Length"] = "long"
+```
 
-# create a bar plot for pickup_borough
-sns.displot(data = taxis, x = "pickup_borough")
+### Exercises
+
+1. **(CW) Assign a new variable called “Season” based on the “PublishMonth” column. Let “Season”  be defined as follows:**
+      * “Season” equals “Winter”  if “PublishMonth”  equals 1, 2, or 3
+      * “Season”  equals “Spring”  if “PublishMonth” equals 4, 5, or 6
+      * “Season”  equals “Summer” if “PublishMonth” equals 7, 8, or 9
+      * “Season”  equals “Fall”  if “PublishMonth” equals 10, 11, or 12
+1.  Define the following columns:
+      * “TimePeriod” based on the “PublishYear” column, with at least 4 categories.
+      * “Popularity” based on the “RatingDistTotal” column, with at least 3 categories.
+
+## Part 2: Correlation
+
+### Code from Class
+
+```
+aq.corr()
+
+aq.corr(method = "pearson")
+aq.corr(method = "spearman")
+
+sns.heatmap(aq.corr(),annot=True)
 plt.show()
 ```
 
-#### Exercises
-1. **(CW) Create a histogram for each quantitative variable in the penguins dataset**
-1. **(CW) Create a bar chart for each categorical variable in the penguins dataset**
-1. Create a histogram of `bill_length_mm` of Adelie penguins.
-1. There are many different kinds of plots you can make with the `displot()` function. What happens when you use an x and y variable? 
-1. Test out other displot options based on this document: https://seaborn.pydata.org/tutorial/distributions.html 
+### Exercises
 
-## Part 2
+1. **(CW) Load the SAT scores dataset into your notebook. Data available here: [https://drive.google.com/file/d/1zxa8ekinJdsucWvtrVmpxazYM8oSo0DA/view?usp=sharing](https://drive.google.com/file/d/10dzC5BrHOmgrtzJ6PWPgGH08cg-vg4B7/view?usp=sharing)**
+1. **(CW) Calculate the Pearson correlation matrix.**
+1. **(CW) Plot the Pearson correlation matrix.**
+1. **(CW) Which pair of variables have the largest-magnitude positive correlation?**
+1. **(CW) Which pair of variables have the largest-magnitude negative correlation?**
+1. Calculate and plot the Spearman  correlation matrix.
+1. What is your interpretation of this correlation plot?
+   
+<img src="https://raw.githubusercontent.com/juliaolivieri/COMP_162_2024/main/lecture18/corr.png" height="400" />
 
+## Part 3: Introduction to Machine Learning
 
-### Exercises 
+### Exercises
 
-1. **(CW) Download the college majors dataset and load it using pandas: https://drive.google.com/file/d/1WK9sQdr_S7RHDUIdEBPZ88dPeOUvTY7E/view?usp=sharing (you can find documentation about this dataset here: https://data.world/fivethirtyeight/college-majors/workspace/file?filename=readme.md
-)**
-1. Find the number of rows and columns of the DataFrame.
-1. **(CW) What is the data type of each column?**
-1. Use the `value_counts()`  function to find the count of each unique value in every categorical column.
-1. **(CW) Filter the data based on one categorical variable value. Compute summary statistics before and after filtering. Do any of the summary statistics change?**
-1. **(CW) Make at least one plot based on this data using the `displot` function.**
-1. **(CW) Brainstorm at least three plots that would help you understand this data. Which variable(s) are involved? Are they quantitative or categorical?**
+1. **(CW) What is your current understanding of the term “machine learning”?**
+1. **(CW) If a machine learning task involves predicting the percentage of a student's score in an exam, which type of task is it?**
+   * Regression
+   * Classification
+1. **(CW) If a machine learning task involves predicting whether a customer will make a purchase or not, which type of task is it?**
+   * Regression
+   * Classification
+1. **(CW) If a machine learning task involves predicting a person's age based on their social media usage, given a dataset with ages and corresponding social media usage data, which type of learning is it?**
+   * Supervised learning
+   * Unsupervised learning
+1. **(CW) If a machine learning task involves grouping similar news articles together without prior knowledge of their categories, which type of learning is it?**
+   * Supervised learning
+   * Unsupervised learning
+  
+## Part 4: Linear Regression
 
-## Part 3
-
-1. **(CW) Summarize the information presented in this plot in ~1 sentence.**
-<img src="https://raw.githubusercontent.com/juliaolivieri/COMP_162_2024/main/lecture16/flipper_density.png" height="400" />
-1. **(CW) Summarize the information presented in this plot in ~1 sentence.**
-<img src="https://raw.githubusercontent.com/juliaolivieri/COMP_162_2024/main/lecture16/example_scatter.png" height="400" />
-1. **(CW) Summarize the information presented in this plot in ~1 sentence.**
-<img src="https://raw.githubusercontent.com/juliaolivieri/COMP_162_2024/main/lecture16/example_box.png" height="400" />
-
-## Part 4 
-
-Example code from class:
+### Code from class
 
 ```
-import seaborn as sns
-import matplotlib.pyplot as plt
+from sklearn import linear_model, model_selection, metrics
 
-# Create a histogram of the "total_bill" variable
-sns.displot(data=tips, x="total_bill")
-plt.show()
+reg = linear_model.LinearRegression().fit(salaries[["YearsExperience"]],salaries[["Salary"]])
 
-# Create a histogram of the "total_bill" variable colored by "smoker" and faceted by "time"
-sns.displot(data=tips, x="total_bill",hue = "smoker", col="time", kind = "hist")
-plt.show()
+print(reg.coef_)
+print(reg.intercept_)
 
-sns.displot(data=tips, x = "tip", hue="time", kind="kde")
-plt.show()
+X_train, X_test, y_train, y_test = model_selection.train_test_split(salaries[["YearsExperience"]], salaries[["Salary"]], test_size = 0.2, random_state=1234)
+   
+reg = LinearRegression().fit(X_train, y_train)
+y_pred = reg.predict(X_test)
+   
+metrics.r2_score(y_test, y_pred)
+metrics.mean_squared_error(y_test, y_pred)
 
-# Create a scatterplot of "total_bill" vs "tip"
-sns.relplot(
-    data=tips,
-    x="total_bill", y="tip"
-)
-plt.show()
-
-# Create a scatterplot of "total_bill" vs "tip" colored by "smoker", faceted by "time", with marker style determined by "smoker" and size of the marker determined by "size"
-sns.relplot(
-    data=tips,
-    x="total_bill", y="tip", col="time",
-    hue="smoker", style="smoker", size="size"
-)
-plt.show()
-
-sns.relplot(
-    data=penguins,
-    x="bill_length_mm", y="bill_depth_mm", col="sex",
-    hue="species", style="island", size="body_mass_g"
-)
-plt.show()
-
-# Create a barplot of "day" by "total_bill" colored by "smoker"
-sns.catplot(data=tips, kind="bar", x="day", y="total_bill", hue="smoker")
-plt.show()
-
-sns.catplot(data = penguins, x = "species", y = "body_mass_g", kind = "box", hue="sex")
-plt.show()
+reg.score(X_test, y_test)
 ```
 
-Documentation for functions:
-* `displot`: https://seaborn.pydata.org/generated/seaborn.displot.html
-* `relplot`: https://seaborn.pydata.org/generated/seaborn.relplot.html
-* `catplot`: https://seaborn.pydata.org/generated/seaborn.catplot.html
+### Exercises
+1. **(CW) Import all necessary sklearn modules:**
+   ```
+   from sklearn import linear_model, model_selection, metrics
+   ```
+1. **(CW) For the "scores" dataset, "Average Score (SAT Writing)" will be the dependent variable. Choose a column to use as the predictor variable (independent variable).**
+1. **(CW) Split the data into a training and testing set (what fraction of the data will you use for testing?).**
+1. **(CW) Train a linear model using the training data.**
+1. “Predict” the dependent variable based on the independent variable using the training set. Use `metrics.r2_score()` and  `metrics.mean_squared_error()` to evaluate the prediction.
+1. **(CW) “Predict” the dependent variable based on the independent variable using the test set. Use `metrics.r2_score()` and  `metrics.mean_squared_error()` to evaluate the prediction.**
+1. Try a few different random seeds for the train/test split. How different are your answers?
+1. Try training your model based on all of the data rows, rather than splitting it into train/test. How do the metrics compare?
+1. **(CW) Try different possible independent variables for the model. Which variable provides the most accurate predictions?**
 
+## Part 5: Linear regression with multiple independent variables
 
-1. **(CW) Make a plot of a quantitative variable using `displot()`. Set `hue` equal to a categorical variable. Try with `kind = "hist"` and `kind = "kde"`. Which provides a better representation of your data?**
-1. **(CW) Make a plot of a categorical variable vs a quantitative variable using `catplot()`. Set `hue` equal to a categorical variable. Try with `kind` equal to each of the following: `"strip", "swarm", "box", "violin", "boxen", "point", "bar"`. Which provides the best representation of your data?**
-1. **(CW) Create at least one of the plots you brainstormed in Classwork 1.**
-1. Work on improving one of your plots so that it enhances understanding of the dataset. Save it by including `plt.savefig("my_img.png")` on the line before `plt.show()`.
-1. **(CW) Submit your favorite plot: [https://forms.gle/P7ZEUeKV8JSZei4m9](https://forms.gle/P7ZEUeKV8JSZei4m9)**
+### Code from class
 
+```
+X_train, X_test, y_train, y_test = model_selection.train_test_split(aq[["CO", "NMHC", "NOx"]], aq[[“O3”]], test_size = 0.2, random_state=123)
 
+reg = linear_model.LinearRegression().fit(X_train, y_train)
 
+reg.score(X_test, y_test)
+
+pd.DataFrame({"column" : X_test.columns, "coefficient" : reg.coef_}).sort_values("coefficient")
+```
+
+### Exercises
+
+1. Try training a linear regression model on all of the quantitative variables from the SAT scores dataset (remember to split into train and test set).
+1. Find the score of this model. How does it compare to the score of models trained on a single variable?
+1. Find the coefficients corresponding to each column. Which column has the largest-magnitude coefficient? Smallest-magnitude? Does this breakdown make sense to you?
+1. What happens if you include the dependent variable in the training set?
+1. Try training a model with only a subset of the independent variables. How does the model perform?
+1. Download the apple quality dataset: https://drive.google.com/file/d/1MJGf7XJSdrGCy6hKDtvS9rt5HvlevMK6/view?usp=sharing. Decide on a column to use as the dependent variable. Try predicting the dependent variable based on the independent variables. Which independent variables are most useful for predicting the dependent variable?
 
