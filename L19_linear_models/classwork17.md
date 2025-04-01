@@ -31,7 +31,6 @@ plt.show()
 ! pip install --upgrade seaborn==0.13.2
 ! pip install --upgrade matplotlib==3.8.4
 ```
-1. Fill out quiz preference: https://forms.gle/fSPNLgvUtWSrg9L78
 1. **(CW) Import the required packages:**
    ```
    import matplotlib.pyplot as plt
