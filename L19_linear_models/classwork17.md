@@ -13,9 +13,15 @@ X_train, X_test, y_train, y_test = model_selection.train_test_split(aq[["CO", "N
 # model training
 reg = linear_model.LinearRegression().fit(X_train, y_train)
 
+# Predicting on test data
+
+y_pred = reg.predict(X_test)
+
 # model evaluation
 metrics.r2_score(y_test, y_pred)
 metrics.mean_squared_error(y_test, y_pred, squared=False)
+
+
 
 reg.score(X_test, y_test)
 
