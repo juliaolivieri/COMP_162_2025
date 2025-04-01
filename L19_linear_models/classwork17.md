@@ -21,14 +21,13 @@ y_pred = reg.predict(X_test)
 metrics.r2_score(y_test, y_pred)
 metrics.mean_squared_error(y_test, y_pred, squared=False)
 
-
-
 reg.score(X_test, y_test)
 
 pd.DataFrame({"column" : X_test.columns, "coefficient" : reg.coef_[0]}).sort_values("coefficient")
 
 # model visualization
-plt.scatter(y_test, y_pred)
+y_test["pred"] = y_pred
+sns.relplot(y_test, x = "O3", y = "pred")
 plt.show()
 ```
 
