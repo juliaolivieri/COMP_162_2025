@@ -2,6 +2,8 @@
 
 ## Part 1: Linear regression with multiple independent variables
 
+Note: The breast cancer dataset used in class is available here: https://drive.google.com/file/d/1vt7TGliSdaT2X5fgbxicYY05CbvH88J6/view
+
 ### Code from class
 
 ```
