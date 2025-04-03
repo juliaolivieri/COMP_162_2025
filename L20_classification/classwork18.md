@@ -84,7 +84,7 @@ kmeans.predict(X)
    plt.show()
    ```
 1. **(CW) Change the `n_clusters` variable for each of these toy datasets. How does this affect the result?**
-1. Vary the parameters used to make the toy datasets (change `n_samples`, `noise`, etc). How do these parameters affect the clusters? 
+1. **(CW) Vary the parameters used to make the toy datasets (change `n_samples`, `noise`, etc). How do these parameters affect the clusters?** 
 
 ## Classwork 3
 
@@ -117,7 +117,7 @@ agg.labels_
    ```
 1. **(CW) Change the `n_clusters` variable for each of these toy datasets. How does this affect the result?**
 1. **(CW) Change the `linkage` variable to `complete`, `single`, and `average`. How does this affect the result?**
-1. Vary the parameters used to make the toy datasets (change `n_samples`, `noise`, etc). How do these parameters affect the clusters? 
+1. **(CW) Vary the parameters used to make the toy datasets (change `n_samples`, `noise`, etc). How do these parameters affect the clusters?** 
 
 ## Classwork 4
 
@@ -151,4 +151,4 @@ dbscan.labels_
    ```
 1. **(CW) Change the `eps` variable for each of these toy datasets. How does this affect the result?**
 1. **(CW) Change the `min_samples` variable for each of these toy datasets. How does this affect the result?**
-1. Vary the parameters used to make the toy datasets (change `n_samples`, `noise`, etc). How do these parameters affect the clusters? 
+1. **(CW) Vary the parameters used to make the toy datasets (change `n_samples`, `noise`, etc). How do these parameters affect the clusters?** 
