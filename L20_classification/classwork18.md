@@ -152,3 +152,7 @@ dbscan.labels_
 1. **(CW) Change the `eps` variable for each of these toy datasets. How does this affect the result?**
 1. **(CW) Change the `min_samples` variable for each of these toy datasets. How does this affect the result?**
 1. **(CW) Vary the parameters used to make the toy datasets (change `n_samples`, `noise`, etc). How do these parameters affect the clusters?** 
+
+## Classwork 5
+
+Try these clustering methods based on two columns of the penguins data. Can you successfully identify penguin species?
