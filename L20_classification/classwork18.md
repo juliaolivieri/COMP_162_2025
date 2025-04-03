@@ -90,7 +90,7 @@ kmeans.predict(X)
 
 Code from class:
 ```
-agg = AgglomerativeClustering(n_clusters=3, linkage="ward").fit(X)
+agg = cluster.AgglomerativeClustering(n_clusters=3, linkage="ward").fit(X)
 
 agg.labels_
 ```
