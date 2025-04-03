@@ -19,7 +19,7 @@ cm = metrics.confusion_matrix(y_test, y_pred, labels = labels)
 pd.DataFrame(cm, index = labels, columns = labels)
 ```
 
-The GitHub from last class is available here: https://github.com/juliaolivieri/COMP_162_2024/blob/main/lecture19/classwork19.md 
+We will be using the Boston Housing dataset for this classwork: https://drive.google.com/file/d/126E1-mxV5J4wtXwCVSF5oOyaaFUgCT9o/view?usp=share_link
 
 1. **(CW) Start a new notebook for today's classwork.**
 1. **(CW) Load in the required libraries:**
