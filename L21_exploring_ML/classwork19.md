@@ -48,3 +48,12 @@ plt.show()
 1. Create a jointplot colored by cluster.    
 
 ## Classwork 2
+
+Code from class:
+```
+titanic = pd.get_dummies(titanic)
+
+titanic = titanic.dropna()
+```
+
+Link to Titanic dataset from class: https://drive.google.com/file/d/10oi-sQjPkatlSvNw0HqU51ktysFTdW0i/view?usp=sharing 
