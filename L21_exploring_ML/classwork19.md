@@ -54,6 +54,26 @@ Code from class:
 titanic = pd.get_dummies(titanic)
 
 titanic = titanic.dropna()
+X = titanic.drop("survived",axis=1)
+y = titanic[["survived"]]
+
+X_train, X_test, y_train, y_test = model_selection.train_test_split(X, y, test_size = 0.2, random_state = 333)
+clf = linear_model.LogisticRegression().fit(X_train, y_train)
+y_pred = clf.predict(X_test)
+
+print("training accuracy", metrics.accuracy_score(y_train, clf.predict(X_train)))
+print("test accuracy", metrics.accuracy_score(y_pred, y_test))
+
+labels = np.unique(y_test)
+cm = metrics.confusion_matrix(y_test, y_pred, labels = labels)
+pd.DataFrame(cm, index=labels, columns=labels)
+
 ```
 
 Link to Titanic dataset from class: https://drive.google.com/file/d/10oi-sQjPkatlSvNw0HqU51ktysFTdW0i/view?usp=sharing 
+
+1. **(CW) Load the bikesharing dataset: https://drive.google.com/file/d/1AueN5bDPkc2GXWsagKrnUY5zCtpLSvg4/view?usp=sharing**
+1. **(CW) One-hot-encode all categorical variables in the bikesharing dataset.**
+1. **(CW) Train a linear regression model to predict `count` and evaluate its performance.**
+1. Try training the same model, except don't use any of the categorical columns. Does including categorical columns improve performance?
+1. Try training a ridge or lasso regression. Does regularization improve accuracy?   
