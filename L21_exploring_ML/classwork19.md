@@ -76,4 +76,33 @@ Link to Titanic dataset from class: https://drive.google.com/file/d/10oi-sQjPkat
 1. **(CW) One-hot-encode all categorical variables in the bikesharing dataset.**
 1. **(CW) Train a linear regression model to predict `count` and evaluate its performance.**
 1. Try training the same model, except don't use any of the categorical columns. Does including categorical columns improve performance?
-1. Try training a ridge or lasso regression. Does regularization improve accuracy?   
+1. Try training a ridge or lasso regression. Does regularization improve accuracy?
+
+## Classwork 3
+
+Code from class:
+```
+from sklearn.tree import DecisionTreeClassifier, DecisionTreeregressor
+from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
+
+clf = DecisionTreeClassifier(max_depth = 4).fit(X_train, y_train)
+y_pred = clf.predict(X_test)
+
+print("training accuracy", metrics.accuracy_score(y_train, clf.predict(X_train)))
+print("test accuracy", metrics.accuracy_score(y_pred, y_test))
+
+labels = np.unique(y_test)
+cm = metrics.confusion_matrix(y_test, y_pred, labels = labels)
+pd.DataFrame(cm, index=labels, columns=labels)
+
+clf = RandomForestClassifier(n_estimators = 10, max_samples = 100, max_features = 5).fit(X_train, y_train)
+```
+
+
+
+1. **(CW) Train a decision tree regressor on the bike sharing data.**
+1. **(CW) Train a random forest regressor on the bike sharing data.**
+1. **(CW) Try different values of the parameters for each of these models.**
+1. Do the models seem to be overfitting?
+1. How do they perform compared to the linear models?
+1. If you have extra time, explore some of the other supervised learning algorithms available in sklearn. Which gives you the best score? Link to sklearn supervised learning algorithms: https://scikit-learn.org/stable/supervised_learning.html
