@@ -5,4 +5,8 @@
 1. **(CW) Build a “draft poster” based on either the Titanic dataset or Bike Sharing dataset**
    1. Include an introduction to the dataset
    1. Include at least one plot
+   1. Include at least one machine learning analysis 
+   1. Include at least one conclusion
+   1. Focus on how the data is presented
+1. **(CW) Submit your "draft poster" here: https://forms.gle/Lm1gkXPZE78NFtFx6**
     
