@@ -17,3 +17,9 @@
   - Scraping Facebook data and merging with Harvard records
   - Emotional contagion among Facebook users
   - Measuring censorship with Encore
+4. **(CW) Go through one of the following two websites.**
+    - Face recognition: http://gendershades.org/overview.html   
+    - Voice to text: https://fairspeech.stanford.edu/  
+    - Which group benefited the most from the technology?
+    - Which group benefited the least?
+5. **(CW) What are some of the dangers of data being shared?**
