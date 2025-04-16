@@ -68,4 +68,5 @@ pd.DataFrame(cm, index = labels, columns = labels)
 
  | `hidden_layer_sizes` | `clf.n_iter_` | Training accuracy | Test accuracy |
  |-|-|-|-|
+ |||||
  
