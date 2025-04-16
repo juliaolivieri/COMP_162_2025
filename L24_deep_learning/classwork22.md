@@ -67,6 +67,6 @@ pd.DataFrame(cm, index = labels, columns = labels)
 1. **(CW) Test at least 5 different architectures, filling in the following table for each one:**
 
 | | `hidden_layer_sizes` | `clf.n_iter_` | Training accuracy | Test accuracy |
-| 1|-|-|-|-|
-| 2|||||
+| -|-|-|-|-|
+| 1|||||
  
