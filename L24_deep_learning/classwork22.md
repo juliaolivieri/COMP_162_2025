@@ -38,6 +38,7 @@ labels = np.unique(y_test)
 cm = metrics.confusion_matrix(y_test, y_pred_test, labels = labels)
 pd.DataFrame(cm, index = labels, columns = labels)
 
+print("number of iterations", clf.n_iter_)
 
 plt.plot(clf.loss_curve_)
 plt.title("Loss Curve")
@@ -61,3 +62,10 @@ pd.DataFrame(cm, index = labels, columns = labels)
 
 
 ```
+
+1. **(CW) Train a neural network on the penguins dataset to predict "island" (https://drive.google.com/file/d/1ESxaIakPh6IpsA_x1H1798003CuqJP8r/view?usp=drive_link)**
+1. **(CW) Test at least 5 different architectures, filling in the following table for each one:**
+
+ | `hidden_layer_sizes` | `clf.n_iter_` | Training accuracy | Test accuracy |
+ --
+ 
