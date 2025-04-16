@@ -64,7 +64,7 @@ pd.DataFrame(cm, index = labels, columns = labels)
 ```
 
 1. **(CW) Train a neural network on the penguins dataset to predict "island" (https://drive.google.com/file/d/1ESxaIakPh6IpsA_x1H1798003CuqJP8r/view?usp=drive_link)**
-1. **(CW) Test at least 5 different architectures, filling in the following table for each one:**
+2. **(CW) Test at least 5 different architectures, filling in the following table for each one:**
 
 | | `hidden_layer_sizes` | `clf.n_iter_` | Training accuracy | Test accuracy |
 | -|-|-|-|-|
@@ -73,4 +73,8 @@ pd.DataFrame(cm, index = labels, columns = labels)
 | 3|||||
 | 4|||||
 | 5|||||
- 
+
+3. **(CW) Which architecture results in the highest test accuracy?**
+4. **(CW) Which of these models seems to be overfitting the most?**
+5. **(CW) Which takes the largest number of iterations to fit?**
+6. Try training a neural network to predict the output of another one of our test datasets (e.g. breast cancer, boston housing). How does the performance compare to logistic regression?
