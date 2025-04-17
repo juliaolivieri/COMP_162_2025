@@ -36,7 +36,7 @@ print(metrics.accuracy_score(y_test, y_pred_test))
 
 labels = np.unique(y_test)
 cm = metrics.confusion_matrix(y_test, y_pred_test, labels = labels)
-pd.DataFrame(cm, index = labels, columns = labels)
+display(pd.DataFrame(cm, index = labels, columns = labels))
 
 print("number of iterations", clf.n_iter_)
 
@@ -58,7 +58,7 @@ print(metrics.accuracy_score(y_test, y_pred_test))
 
 labels = np.unique(y_test)
 cm = metrics.confusion_matrix(y_test, y_pred_test, labels = labels)
-pd.DataFrame(cm, index = labels, columns = labels)
+display(pd.DataFrame(cm, index = labels, columns = labels))
 
 
 ```
