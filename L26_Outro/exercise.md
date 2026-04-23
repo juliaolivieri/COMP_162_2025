@@ -24,4 +24,4 @@
 
 1. Create a google slide based on something you found interesting about your exploration of your dataset
 1. Follow the “guidelines for slide design” principles
-1. When you’re done, submit your slide to the google form: https://docs.google.com/forms/d/e/1FAIpQLSfvzzR_2gCFgfbdZD8wHhfpe2F138EkOkKQc3upUjVPI6XqkA/viewform?usp=header 
+1. When you’re done, submit your slide to the google form: [https://docs.google.com/forms/d/e/1FAIpQLSfvzzR_2gCFgfbdZD8wHhfpe2F138EkOkKQc3upUjVPI6XqkA/viewform?usp=header ](https://forms.gle/GR3Jbi1oNF1T3bna6)
